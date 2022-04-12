@@ -44,4 +44,6 @@ void BHM_Renderer_Set::BHM_Render(){
 	for(auto & renderer : currentRenderers){
 		renderer->BHM_RenderSprite();
 	}*/
+
+	//changing my code
 }
