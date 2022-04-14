@@ -33,11 +33,11 @@ BHM_Component::~BHM_Component(){
 }
 
 void BHM_Component::BHM_DeleteBond(weak_ptr<BHM_Component_Queue_Bond> weakBond){
-	cout << "My components Before (Size: " << rendererBonds->size() << "): ";;
+	/*cout << "My components Before (Size: " << rendererBonds->size() << "): ";;
 	for(list<shared_ptr<BHM_Component_Queue_Bond>>::iterator bond = this->rendererBonds->begin(); bond != this->rendererBonds->end(); bond++){
 		cout << bond->get()->queueType << " ";
 	}
-	cout << endl;
+	cout << endl;*/
 
 	for(list<shared_ptr<BHM_Component_Queue_Bond>>::iterator bond = this->rendererBonds->begin(); bond != this->rendererBonds->end(); bond++){
 		if(weakBond.lock() == *bond){
@@ -46,12 +46,12 @@ void BHM_Component::BHM_DeleteBond(weak_ptr<BHM_Component_Queue_Bond> weakBond){
 			this->rendererBonds->erase(bond--);
 		}
 	}
-
+	/*
 	cout << "My components Afer (Size: " << rendererBonds->size() << "): ";
 	for(list<shared_ptr<BHM_Component_Queue_Bond>>::iterator bond = this->rendererBonds->begin(); bond != this->rendererBonds->end(); bond++){
 		cout << bond->get()->queueType << " ";
 	}
-	cout << endl;
+	cout << endl;*/
 
 }
 

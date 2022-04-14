@@ -30,7 +30,7 @@ void BHM_Runner::BHM_Loop(){
 
 }
 
-void BHM_Runner::setRendererManager(shared_ptr<BHM_Renderer_Manager> rendererManager)
+void BHM_Runner::BHM_SetRendererManager(shared_ptr<BHM_Renderer_Manager> rendererManager)
 {
 	this->rendererManager = rendererManager;
 	this->rendererManager->BHM_SetRunner(this);

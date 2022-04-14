@@ -9,7 +9,7 @@
 class BHM_Runner : public BHM_Entity{
     protected:
         shared_ptr<BHM_Renderer_Manager> rendererManager;
-        void setRendererManager(shared_ptr<BHM_Renderer_Manager> rendererManager);
+        void BHM_SetRendererManager(shared_ptr<BHM_Renderer_Manager> rendererManager);
 
     public:
     	void BHM_Run();

@@ -27,3 +27,11 @@ void BHM_Entity::BHM_Initialize(){
 void BHM_Entity::BHM_Loop(){
     cout << "BHM_Entity Loop" << endl;
 }
+
+int BHM_Entity::BHM_GetID(){
+    return ID;
+}
+
+string BHM_Entity::BHM_GetName(){
+    return name;
+}

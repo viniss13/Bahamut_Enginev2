@@ -13,3 +13,7 @@ BHM_Component_Queue_Bond::~BHM_Component_Queue_Bond(){
 BHM_Component* BHM_Component_Queue_Bond::BHM_GetComponent(){
 	return this->component;
 }
+
+BHM_QueueType BHM_Component_Queue_Bond::BHM_GetQueueType(){
+	return this->queueType;
+}

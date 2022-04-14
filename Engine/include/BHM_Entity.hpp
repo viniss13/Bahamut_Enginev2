@@ -4,17 +4,17 @@
 class BHM_Entity{
     protected:
         bool initialized = false;
+        static int lastID;
+        string name;
+        int ID;
     public:
         BHM_Entity();
-        static int lastID;
-        int ID;
-        string name;
-        
-         
         
         virtual void BHM_StartInitialize();
         virtual void BHM_StartLoop();
         
         virtual void BHM_Initialize();
         virtual void BHM_Loop();
+        int BHM_GetID();
+        string BHM_GetName();
 };
