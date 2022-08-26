@@ -1,6 +1,7 @@
 #pragma once
 #include "BHM_Common.hpp"
 #include "BHM_Entity.hpp"
+#include "BHM_Config.hpp"
 
 //class BHM_Renderer_Manager;
 

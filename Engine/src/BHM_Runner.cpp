@@ -1,7 +1,17 @@
 #include "BHM_Runner.hpp"
+#include <chrono>
 
 void BHM_Runner::BHM_Run(){
+	//using namespace std::literals::chrono_literals;
+
+	int i = 0;
+
+
+	auto start = std::chrono::high_resolution_clock::now();
 	while(true){
+		i++;
+		BHM_Config::standardGUI->BHM_PrepareScene();
+		BHM_Config::standardGUI->BHM_PresentScene();
 		BHM_StartInitialize();
 		BHM_StartLoop();
 		if(this->rendererManager != nullptr){
@@ -10,6 +20,15 @@ void BHM_Runner::BHM_Run(){
 			cout << "Renderer Manager not Found" << endl;
 			break;
 		}
+
+		if(i == 3700){
+			auto end = std::chrono::high_resolution_clock::now();
+			std::chrono::duration<float> duration = end - start;
+			//cout << duration.count() << endl;
+			start = end;
+			i = 0;
+		}
+		
 	}
 }
 

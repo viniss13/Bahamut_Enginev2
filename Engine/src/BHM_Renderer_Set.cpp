@@ -39,11 +39,13 @@ void BHM_Renderer_Set::BHM_Render(){
 
 	for(auto & renderer : currentRenderers){
 		renderer->BHM_DestroyComponents();
-	}
-
-	for(auto & renderer : currentRenderers){
-		renderer->BHM_RenderSprite();
 	}*/
 
-	//changing my code
+	for(auto & renderer : currentRenderers){
+
+		for(int i = 0; i < BHM_Config::LAYERS; i++){
+			renderer->BHM_RenderSprites(i);
+		}
+	}
+
 }

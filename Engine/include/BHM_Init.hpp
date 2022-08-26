@@ -2,6 +2,7 @@
 #include "BHM_Common.hpp"
 #include "BHM_Config.hpp"
 #include "BHM_Runner.hpp"
+#include "BHM_SDL_GUI.hpp"
 
 class BHM_Runner;
 

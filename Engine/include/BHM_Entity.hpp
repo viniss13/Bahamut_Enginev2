@@ -16,5 +16,6 @@ class BHM_Entity{
         virtual void BHM_Initialize();
         virtual void BHM_Loop();
         int BHM_GetID();
+        bool BHM_HasInitialized();
         string BHM_GetName();
 };

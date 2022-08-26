@@ -5,5 +5,5 @@ void MyComponent::BHM_Initialize(){
 }
 
 void MyComponent::BHM_Loop(){
-	cout << "Looping my component: " << ID << endl;
+	//cout << "Looping my component: " << ID << endl;
 }

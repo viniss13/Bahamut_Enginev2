@@ -24,6 +24,22 @@ bool BHM_Component::BHM_AddBond(weak_ptr<BHM_Component_Queue_Bond> rendererBond)
 	return true;
 }
 
+void BHM_Component::BHM_StartInitialize(){
+    cout << "BHM_Component StartInitialize" << endl;
+    if(!initialized){
+
+    	if(this->bondCommand != NULL){
+    		cout << "We are here" << endl;
+    		delete this->bondCommand;
+    		this->bondCommand = NULL;
+    	}
+    		
+
+        this->BHM_Initialize();
+        initialized = true;
+    }
+}
+
 void BHM_Component::BHM_Initialize(){
 	cout << "Initializing component" << endl;
 }
@@ -57,4 +73,15 @@ void BHM_Component::BHM_DeleteBond(weak_ptr<BHM_Component_Queue_Bond> weakBond){
 
 void BHM_Component::BHM_IncludeBond(BHM_QueueType queueType){
 	includedIn->push_back(queueType);
+}
+
+void BHM_Component::BHM_AddBondCommand(BHM_Bond_Command* bondCommand){
+	if(initialized) return;
+	if(this->bondCommand) return;
+
+	this->bondCommand = bondCommand;
+}
+
+BHM_Bond_Command* BHM_Component::BHM_GetBondCommand(){
+	return this->bondCommand;
 }

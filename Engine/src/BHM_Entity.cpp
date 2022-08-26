@@ -13,7 +13,7 @@ void BHM_Entity::BHM_StartInitialize(){
         this->BHM_Initialize();
         initialized = true;
     }
-}
+}   
 
 void BHM_Entity::BHM_StartLoop(){
     //cout << "BHM_Entity StartLoop" << endl;
@@ -25,7 +25,7 @@ void BHM_Entity::BHM_Initialize(){
 }
 
 void BHM_Entity::BHM_Loop(){
-    cout << "BHM_Entity Loop" << endl;
+    //cout << "BHM_Entity Loop " << ID << endl;
 }
 
 int BHM_Entity::BHM_GetID(){
@@ -34,4 +34,8 @@ int BHM_Entity::BHM_GetID(){
 
 string BHM_Entity::BHM_GetName(){
     return name;
+}
+
+bool BHM_Entity::BHM_HasInitialized(){
+    return initialized;
 }
